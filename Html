@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+  crossorigin="anonymous"
+/>
+<link>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <div class="icon-logo">
+        <ion-icon name="storefront-outline" class="icon-logo"></ion-icon>
+        <h1>Facilita Store</h1>
+        </div>
+      </div>
+      <div class="btn-pesquisar">
+        <input type="text" placeholder="Buscar ..." id="search"/>
+        <button>Pesquisar</button>
+      </div>
+     
+      </div>
+      <div class="nav-list">
+        <ul class="nav-item">
+          <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Cadastra-se</a>
+          </li>
+          
+          <li class="nav-item"><a href="#" class="nav-link">Pedidos</a></li>
+        </ul>
+        <div class="icon-nav">
+          <i class="bi bi-cart-check"></i>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <strong><p class="paragrafo">
+        Obs : Dinheiro na entrega/ 30 dias de retorno/ serviço ao cliente 0800 00 11 10.
+      </p></strong>
+    </div> 
+    <div class="mobile-menu-icon">
+      <button onclick="menuShow()"><img class="icon" src="images/menu_white_36dp.png" alt=""></button>
+  </div>
+    <div class="mobile-menu">
+      <ul class="nav-item">
+        <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Cadastra-se</a>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link">Pedidos</a></li>  
+      </ul>  
+      <div class="btn-pesquisar">
+        <input type="text" placeholder="Buscar ..." />
+        <button id="btn-pesquisar-busca">Pesquisar</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid mt-2 ">
+    <div class="row mx-2">
+      <div class="col-12 col-md-3 bg-white rounded">
+        <div class="text-center pt-2">
+          <h4 class="text mt-2">Filtro Rápido</h4>
+        </div>
+
+        <select class="form-select form-select-sm mb-4 ">
+          <option selected> Categoria</option>
+          <option value="1">Fones</option>
+          <option value="2">Dispositivo</option>
+          <option value="3">Manetes</option>
+        </select>
+        <select class="form-select form-select-sm mb-4">
+          <option selected>Marca</option>
+          <option value="1">COMPUTADOR</option>
+          <option value="2">XBOX</option>
+          <option value="3">PLAYSTATION</option>
+        </select>
+        <select class="form-select form-select-sm mb-4 " >
+          <option selected>Itens-USB</option>
+          <option value="1">Head-seat</option>
+          <option value="2">Mouse</option>
+          <option value="3">Manetes</option>
+        </select>
+        <select class="form-select form-select-sm mb-4 ">
+          <option selected>Tendencia</option>
+          <option value="1">Versao 2010</option>
+          <option value="2">Versao 2012</option>
+          <option value="3">Versao 2015</option>
+        </select>
+        <button type="button" class="btn btn-outline-primary btn-sm mb-3 ">
+          <i class="bi bi-filter"></i> Filtrar
+        </button>
+      </div>
+
+      <div class="col-12 col-md-9">
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/images/Banner-Loja2 .jpg"
+                class="d-block w-100 rounded"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/images/Banner-Loja3.jpg"
+                class="d-block w-100 rounded"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/images/Banner-Loja4.jpg"
+                class="d-block w-100 rounded"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-2 rounded mt-2 ">
+      <div class="col-9">
+        <div class="row mt-3 ">
+          <div class="col">
+            <center>
+            <div class="card ">
+              <center>
+              <img
+                src="/images/Manete amarela hd.webp"
+                class="card-img-top d-block w-100"
+                alt="..."
+              />
+              </center>
+              <div class="card-body bg-light ">
+                <h5 class="text">Manete Xbox- Amarela, CABO USB</h5>
+                <a href="#" class="btn btn-outline-primary"
+                  ><i class="bi bi-cart4"></i> R$99,90</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <center>
+              <img
+                src="images/Alexia HD.jpg"
+                class="card-img-top d-block w-100"
+                alt="..."
+              />
+              </center>
+              <div class="card-body bg-light">
+                <h5 class="text">Amazon Alexia Preta, Contem carregador</h5>
+                <a href="#" class="btn btn-outline-primary"
+                  ><i class="bi bi-cart4"></i> R$79,90</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <center>
+              <img
+                src="/images/Cpu Gamer hd.webp"
+                class="card-img-top d-block w-100"
+                alt="..."
+              />
+              </center>
+              <div class="card-body bg-light">
+                <h5 class="text">Computador Gamer-RGB 8GB-RAM</h5>
+                <a href="#" class="btn btn-outline-primary"
+                  ><i class="bi bi-cart4"></i> R$4469,90</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-sm-4">
+            <div class="card">
+              <center>
+              <img
+                src="/images/Teclado gamer hd.webp"
+                class="card-img-top d-block w-100"
+                alt="..."
+              />
+              </center>
+              <div class="card-body bg-light">
+                <h5 class="text">Teclado Mecaninco RGB-  USB</h5>
+                <a href="#" class="btn btn-outline-primary"
+                ><i class="bi bi-cart4"></i> R$150,90</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <center>
+              <img
+                src="/images/Manete preta hd xbox.jpg"
+                class="card-img-top d-block w-100"
+                alt="..."
+              />
+              </center>
+              <div class="card-body bg-light">
+                <h5 class="text">Manete-XBOX Preta,  USB</h5>
+                <a href="#" class="btn btn-outline-primary"
+                  ><i class="bi bi-cart4"></i> R$99,90</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <center>
+              <img
+                src="/images/Manete-1 (1).jpg"
+                class="card-img-top  d-block w-100"
+                alt="..."
+              />
+              </center>
+              <div class="card-body bg-light">
+                <h5 class="text">Manete playstation 4-Preta,  PC</h5>
+                <a href="#" class="btn btn-outline-primary"
+                  ><i class="bi bi-cart4"></i> R$109,90</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <div class="card">
+              <center>
+              <img
+                src="/images/HEADSEA-1 (1).jpg"
+                class="card-img-top d-block w-100"
+                alt="..."
+              />
+             </center>
+              <div class="card-body bg-light">
+                <h5 class="text">Head-seat RGB WIN10, USB, P2</h5>
+                <a href="#" class="btn btn-outline-primary"
+                  ><i class="bi bi-cart4"></i> R$79,90</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <center>
+              <img
+                src="/images/Fone de ouvido hd.webp"
+                class="card-img-top d-block w-100"
+                alt="..."
+              />
+              </center>
+              <div class="card-body bg-light">
+                <h5 class="text">Fone de ouvido- via bluetooth, </h5>
+                <a href="#" class="btn btn-outline-primary"
+                  ><i class="bi bi-cart4"></i> R$89,90</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <center>
+              <img
+                src="/images/Mouse gamer hd.webp"
+                class="card-img-top d-block w-100"
+                alt="..."
+              />
+              </center>
+              <div class="card-body bg-light">
+                <h5 class="text">Mouse gamer RGB, Entrada USB, </h5>
+                <a href="#" class="btn btn-outline-primary"
+                  ><i class="bi bi-cart4"></i> R$79,90</a
+                >
+              </div>
+            </div>
+          </div>
+        </center>
+        </div>
+      </div>
+      <div class="col-12 col-lg-3 mt-3 ">
+        <div class="row bg-light rounded">
+          <div class="col-md-12">
+            <div class="row mt-2">
+              <div class="col text-center">
+                <h5 class="text-primary">PRODUTOS MAIS VISTOS</h5>
+                <br>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="row border-bottom border-success mb-3 mx-2">
+                  <div class="col-md-4 mb-2 ">
+                    <a href="#"
+                      ><img
+                        src="/images/CPU GAMER (1) (1).jpg"
+                        alt=""
+                        class="rounded"
+                    /></a>
+                  </div>
+                  <div class=" col-sm-12 col-md-6 ">
+                    <p class="texto-menor">CPU GAMER</p>
+                    <a href="#" class="btn btn-outline-primary"
+                    ><i class="bi bi-cart4" ></i> R$4469,90</a
+                  >
+                  <br>
+                     <p class="text-warning-emphasis"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="row border-bottom border-success mb-3 mx-2">
+                  <div class="col-md-4 mb-2">
+                    <a href="#"
+                      ><img
+                        src="/images/Teclado (1) (2).jpg"
+                        alt=""
+                        class="rounded"
+                    /></a>
+                  </div>
+                  <div class="  col-sm-12 col-md-6">
+                    <p class="texto-menor">Teclado Mecanico</p>
+                    <p class="texto-menor">
+                      <a href="#" class="btn btn-outline-primary"
+                      ><i class="bi bi-cart4"></i> R$59,90</a
+                    >
+                    <br>
+                     <p class="text-warning-emphasis"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="row border-bottom border-success mb-3 mx-2">
+                  <div class="col-md-4 mb-2">
+                    <a href="#"
+                      ><img
+                        src="/images/Manete-amarela (2) (1).jpg"
+                        alt=""
+                        class="rounded"
+                    /></a>
+                  </div>
+                  <div class="  col-sm-12 col-md-6">
+                    <p class="texto-menor">Manete amarela</p>
+                    <a href="#" class="btn btn-outline-primary""
+                    ><i class="bi bi-cart4"></i> R$99,90</a
+                  ><Br>
+                    <p class="text-warning-emphasis"><i class="bi bi-star-fill "></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="row border-bottom border-success mb-3 mx-2">
+                  <div class="col-md-4 mb-2">
+                    <a href="#"
+                      ><img
+                        src="/images/Alexi (1) (1).jpg"
+                        alt=""
+                        class="rounded"
+                    /></a>
+                  </div>
+                  <div class="  col-sm-12 col-md-6">
+                    <p class="texto-menor">Alexia</p>
+                    <a href="#" class="btn btn-outline-primary"
+                    ><i class="bi bi-cart4"></i> R$79,90</a
+                  ><br>
+                     <p class="text-warning-emphasis"> <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+               
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="row border-bottom border-success mb-3 mx-2">
+                  <div class="col-md-4 mb-2">
+                    <a href="#"
+                      ><img
+                        src="/images/Manete Preta (2).jpg"
+                        alt=""
+                        class="rounded"
+                    /></a>
+                  </div>
+                  <div class="  col-sm-12 col-md-6">
+                    <p class="texto-menor mt-3">Manete xbox preta</p>
+                    <a href="#" class="btn btn-outline-primary"
+                    ><i class="bi bi-cart4 mt-3"></i> R$99,90</a
+                  ><br>
+               <P class="text-warning-emphasis"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></P>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        
+
+       
+              </div>
+            </div>
+
+            <div class="row bg-red rounded">
+              <div class="col-md-12">
+                <p class="text-primary">Cadastre-se em nossa Newsletter</p>
+                <form>
+                  <div class="mb-3">
+                    <label class="text-primary">Insira seu e-mail</label>
+                    <input type="email" class="form-control mt-3" placeholder="Digite seu email... " />
+                    <div id="emailHelp" class="text-primary mt-3">
+                      Nós não divilgaremos suas informações
+                    </div>
+                    <button type="button" class="btn btn-outline-danger">
+                      <strong><i class="bi  bi-envelope-at"></i> Cadastrar</strong>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<footer>
+  <div class="container-footer">
+    <div class="row-footer">
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <i class="bi bi-envelope"></i><br><i class="bi bi-telephone-plus"></i>
+          <li><a href="#">marcospauloglt@gmail.com</a></li>
+          <li><a href="#">3660-2712</a></li>
+          <!-- <li><a href="#">Politica de privacidade</a></li>
+          <li><a href="#">Programa de afiliados</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Obter ajuda</h4>
+        <ul>
+         
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Transporte</a></li>
+          <li><a href="#">Devoluçoes</a></li>
+          <li><a href="#">Status de pedido</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Formas de pagamento</h4>
+        <ul>
+          <div class="card-icon-pay">
+            <i class="bi bi-currency-dollar"></i>   
+          </div>
+  
+          <div class="card-icon-pay">
+            <i class="bi bi-credit-card-2-back"></i> 
+          </div>
+  
+          <div class="card-icon-pay">
+            <i class="bi bi-credit-card"></i>   
+          </div>
+  
+          <div class="card-icon-pay">
+            <i class="bi bi-paypal"></i>  
+          </div>
+          <div class="card-icon-pay">
+            <i class="bi bi-currency-bitcoin"></i>
+          </div>
+        </ul>                    
+      </div>
+      <div class="footer-col">
+        <h4>Facilita-Store</h4>
+        <div class="form-sub">
+          <form>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Digite seu email"
+            />
+            <button>Escreva</button>
+          </form>
+        </div>
+        <div class="medias-socias">
+          <a href="#"> <i class="fa fa-facebook"></i> </a>
+          <a href="#"> <i class="fa fa-instagram"></i> </a>
+          <a href="#"> <i class="fa fa-twitter"></i> </a>
+          <a href="#"> <i class="fa fa-linkedin"></i> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+ <div class="company">
+  <h2>© 2023 Facilita-Store. All Rights Reserved.</h2>
+ </div>
+</body>
+
+
+<script
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+  ></script>
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+crossorigin="anonymous"
+></script>
+<script src="script.js"></script>
+</html>
