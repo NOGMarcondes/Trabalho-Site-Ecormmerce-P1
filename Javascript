@@ -45,4 +45,3 @@ function menuShow() {
     document.querySelector(".icon").src = "assets/images/close_white_36dp.svg";
   }
 }
-
