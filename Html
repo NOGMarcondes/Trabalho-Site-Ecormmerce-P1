@@ -1,162 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecomerce</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
-  <body>
-    <header>
-      <nav class="nav-bar">
-        <div class="logo">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Ecomerce</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="nav-bar">
+      <div class="logo">
+        <div class="icon-logo">
+          <ion-icon name="storefront-outline" class="icon-logo"></ion-icon>
           <h1>Facilita Store</h1>
         </div>
-        <!-- <div class="login-button">
-          <button><a href="#">Pesquisar</a></button>
-        </div> -->
-        <div class="nav-list">
-          <ul>
-            <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Carrinho</a></li>
-            <li class="nav-item"><a href="#" class="nav-link"> Pedidos</a></li>
-            <li class="nav-item"><a href="#" class="nav-link"> Login</a></li>
-          </ul>
-        </div>
+      </div>
+      <div class="btn-pesquisar">
+        <input type="text" placeholder="Buscar ..." id="search" />
+      <button id="pesquisa" onclick="pesquisar()">Pesquisar</button>
+      </div>
 
-        <div class="mobile-menu-icon">
-          <button onclick="menuShow()">
-            <img class="icon" src="/images/menu_white_36dp.png" alt="" />
+      </div>
+      <div class="nav-list">
+        <ul class="nav-item">
+          <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Pedidos</a></li>
+        </ul>
+        <div class="icon-nav">
+          <i class="bi bi-cart-check"></i>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <strong>
+        <p class="paragrafo">
+          Marcos Paulo Gonçaves Silva, Curso : ADS, Matricula 812623
+        </p>
+      </strong>
+    </div>
+    <div class="mobile-menu-icon">
+      <button onclick="menuShow()"><img class="icon" src="images/menu_white_36dp.png" alt=""></button>
+    </div>
+    <div class="mobile-menu">
+      <ul class="nav-item">
+        <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Pedidos</a></li>
+      </ul>
+      <div class="btn-pesquisar">
+        <input type="text" placeholder="Buscar ..." id="search" />
+      <button id="pesquisa" onclick="pesquisar()">Pesquisar</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid mt-2">
+    <div class="row mx-2">
+      <div class="col-12 col-lg-3 bg-white rounded">
+        <div class="text-center pt-2">
+          <h4 class="text mt-2">Filtro Rápido</h4>
+        </div>
+        <select class="form-select form-select2 mb-4 mt-5">
+          <option value="0">Cor</option>
+          <option value="Beige">Beige</option>
+          <option value="Green">Green</option>
+          <option value="Brown">Brown</option>
+          <option value="Blue">Blue</option>
+          <option value="Grey">Grey</option>
+          <option value="Black">Black</option>
+        </select>
+
+        <center>
+          <button type="button" class="btn btn-outline-primary mt-5 my-2"
+          type="submit" onclick="filtroRapido()">Filtrar</button>
+        </center>
+      </div>
+
+      <div class="col-12 col-lg-9">
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/images/Banner-Loja2.jpg" class="d-block w-100 rounded" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="/images/Banner-Loja3.jpg" class="d-block w-100 rounded" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="/images/Banner-Loja4.jpg" class="d-block w-100 rounded" alt="..." />
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
           </button>
         </div>
-      </nav>
-      <div class="mobile-menu">
-        <ul>
-          <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Carrinho</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Pedidos</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
-        </ul>
-
-        <div class="login-button">
-          <button><a href="#">Pesquisar</a></button>
-        </div>
       </div>
-    </header>
-    <div>
-    </div>
-    <div class="container-slider">
-      <button id="prev-button">
-        <img src="/images/Arroq.png" alt="prev-button" />
-      </button>
-      <div class="container-images">
-        <img src="/images/Banner-Loja4.jpg" alt="girl" class="slider on" />
-        <img src="/images/Banner-Loja2.jpg" alt="girl" class="slider" />
-        <img src="/images/Banner-Loja3.jpg" alt="girl" class="slider" />
-      </div>
-      <button id="next-button">
-        <img src="/images/arrow.png" alt="next-button" />
-      </button>
-    </div>
-  </body>
-
-    <main class="cards">
-      <section class="card">
-        <div class="icon">
-          <img src="/images/Manete Preta (1).jpg" alt="" />
-        </div>
-        <h3>199,00</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing. </span>
-        <button class="bnt-cards">Compre ja</button>
-      </section>
-
-      <section class="card">
-        <div class="icon">
-          <img src="/images/Manete-amarela (1).jpg" alt="" />
-        </div>
-
-        <h3>89,99</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
-        <button>Compre ja</button>
-      </section>
-
-      <section class="card">
-        <div class="icon">
-          <img src="/images/Manete-1.jpg" alt="" />
-        </div>
-        <h3>250,00</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
-        <button>Compre ja</button>
-      </section>
-    </main>
-    <main class="cards">
-      <section class="card">
-        <div class="icon">
-          <img src="/images/Alexi (1).jpg" alt="" />
-        </div>
-        <h3>359,00</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
-        <button>Compre ja</button>
-      </section>
-
-      <section class="card">
-        <div class="icon">
-          <img src="/images/Teclado (1).jpg" alt="" />
-        </div>
-
-        <h3>125,99</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
-        <button>Compre ja</button>
-      </section>
-
-      <section class="card">
-        <div class="icon">
-          <img src="/images/CPU GAMER (1).jpg" alt="" />
-        </div>
-        <h3>299,00</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
-        <button>Compre ja</button>
-      </section>
-    </main>
-    <main class="cards">
-      <section class="card">
-        <div class="icon">
-          <img src="/images/Fone ouvido (1).jpg" alt="" />
-        </div>
-        <h3>150,00</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
-        <button>Compre ja</button>
-      </section>
-
-      <section class="card">
-        <div class="icon">
-          <img src="/images/HEADSEA-1.jpg" alt="" />
-        </div>
-
-        <h3>59,00</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
-        <button>Compre ja</button>
-      </section>
-
-      <section class="card">
-        <div class="icon">
-          <img src="/images/Mouse (1).jpg" alt="" />
-        </div>
-        <h3>110,99</h3>
-        <span>Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
-        <button>Compre ja</button>
-      </section>
-    </main>
-
     </div>
 
-    
+    <main class="row" id="produtos">
+      <script>
+        fetch("https://diwserver.vps.webdock.cloud/products/category/Accessories - Belts")
+          .then(response => response.json())
+          .then(data => {
+            let str = '';
+            for (let i = 0; i < 9; i++) {
+              var pdt = data.products[i];
+              str += `<div class="card col-12 col-md-4 mt-3">
+                    <center><img src="${pdt.image}" class="style="width=200px;"" alt="..."></center>
+                      <div class="card-body">
+                        <h2 class="card-title">${pdt.title}</h2>
+                        <p> Brand Name: ${pdt.brandName}<br> Price: $${pdt.price},99 <br> Color: ${pdt.baseColour}</p>
+                        <center><a href="detalhes.html?cod=${pdt.id}"class="btn">Mais detalhes</a></center>
+                      </div>
+                    </div>`;
+            }
+            document.getElementById('produtos').innerHTML = str;
+          });
+      </script>
+    </main>
+
     <footer>
       <div class="container-footer">
         <div class="row-footer">
@@ -191,12 +177,7 @@
             <h4>Loja online</h4>
             <div class="form-sub">
               <form>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Digite seu email"
-                />
+                <input type="email" name="email" id="email" placeholder="Digite seu email" />
                 <button>Escreva</button>
               </form>
             </div>
@@ -210,14 +191,17 @@
         </div>
       </div>
     </footer>
-  </body>
 
-  <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+      </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous">
+    </script>
+
+</body>
+
 </html>
