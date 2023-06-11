@@ -1,3 +1,91 @@
+function pesquisar() {
+  const dadosresultado = document.getElementById('search');
+  const resultado = dadosresultado.value.toLowerCase();
+  const titles = document.getElementsByClassName('card-title');
+
+  let itensEncontrados = 0;
+  for (let i = 0; i < 9; i++) {
+    const title = titles[i];
+    const nome = title.textContent.toLowerCase();
+    const produtos = title.closest('.card');
+    if (nome.includes(resultado)) {
+      produtos.style.display = 'block';
+      itensEncontrados++;
+    } else {
+      produtos.style.display = 'none';
+    }
+  }
+  if (itensEncontrados === 0) {
+    alert('Nenhum item encontrado.');
+    fetch(`https://diwserver.vps.webdock.cloud/products/category/Accessories - Belts`)
+      .then(res => res.json())
+      .then(data => {
+        let str = '';
+        for (let i = 0; i < 9; i++) {
+          var pdt = data.products[i];
+          str +=
+            `<div class="card col-12 col-md-4 mt-3">
+          <center><img src="${pdt.image}" class="style="width=200px;"" alt="..."></center>
+            <div class="card-body">
+              <h2 class="card-title">${pdt.title}</h2>
+              <p> Brand Name: ${pdt.brandName}<br> Price: $${pdt.price},99 <br> Color: ${pdt.baseColour}</p>
+              <center><a href="detalhes.html?cod=${pdt.id}"class="btn">Mais detalhes</a></center>
+            </div>
+          </div>`;
+        }
+        document.getElementById('produtos').innerHTML = str;
+      });
+  }
+}
+
+function filtroRapido() {
+  var filtro2 = document.querySelector('.form-select2');
+  var filtrar2 = filtro2.value;
+  if (filtrar2 != 0) {
+    fetch(`https://diwserver.vps.webdock.cloud/products/category/Accessories - Belts`)
+      .then(res => res.json())
+      .then(data => {
+        let str = '';
+        for (let i = 0; i < 9; i++) {
+          var pdt = data.products[i];
+          if (pdt.baseColour == filtrar2) {
+            str +=
+              `<div class="card col-12 col-md-4 mt-3">
+          <center><img src="${pdt.image}" class="style="width=200px;"" alt="..."></center>
+            <div class="card-body">
+              <h2 class="card-title">${pdt.title}</h2>
+              <p> Brand Name: ${pdt.brandName}<br> Price: $${pdt.price},99 <br> Color: ${pdt.baseColour}</p>
+              <center><a href="detalhes.html?cod=${pdt.id}"class="btn">Mais detalhes</a></center>
+            </div>
+          </div>`;
+          }
+        }
+        document.getElementById('produtos').innerHTML = str;
+      });
+  }
+  else {
+    fetch(`https://diwserver.vps.webdock.cloud/products/category/Accessories - Belts`)
+      .then(res => res.json())
+      .then(data => {
+        let str = '';
+        for (let i = 0; i < 9; i++) {
+          var pdt = data.products[i];
+          str +=
+            `<div class="card col-12 col-md-4 mt-3">
+            <center><img src="${pdt.image}" class="style="width=200px;"" alt="..."></center>
+            <div class="card-body">
+            <h2 class="card-title">${pdt.title}</h2>
+            <p> Brand Name: ${pdt.brandName}<br> Price: $${pdt.price},99 <br> Color: ${pdt.baseColour}</p>
+            <center><a href="detalhes.html?cod=${pdt.id}"class="btn">Mais detalhes</a></center>
+            </div>
+            </div>`;
+        }
+        document.getElementById('produtos').innerHTML = str;
+      });
+  }
+}
+
+
 const slider = document.querySelectorAll(".slider");
 const btnPrev = document.getElementById("prev-button");
 const btnNext = document.getElementById("next-button");
